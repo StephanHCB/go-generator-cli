@@ -26,16 +26,17 @@ func parseCommandLine(ctx context.Context) bool {
 	aulogging.Logger.Ctx(ctx).Info().Printf(" target=%v", targetPath)
 	if createGenerator != "" {
 		aulogging.Logger.Ctx(ctx).Info().Printf(" create=%v", createGenerator)
-		aulogging.Logger.Ctx(ctx).Info().Print("will write a default render spec to file 'generated-%v.yaml' in target for generator %v", createGenerator, createGenerator)
+		aulogging.Logger.Ctx(ctx).Info().Printf("will write a default render spec to file 'generated-%v.yaml' in target for generator %v", createGenerator, createGenerator)
 		opscount++
 	}
 	if renderSpecfile != "" {
 		aulogging.Logger.Ctx(ctx).Info().Printf(" render=%v", renderSpecfile)
-		aulogging.Logger.Ctx(ctx).Info().Print("will render according to render spec file '%v'", renderSpecfile)
+		aulogging.Logger.Ctx(ctx).Info().Printf("will render according to render spec file '%v'", renderSpecfile)
 		opscount++
 	}
 	if opscount != 1 {
 		aulogging.Logger.Ctx(ctx).Error().Print("invalid arguments, exactly one of `create` or 'render' is required")
+		success = false
 	}
 
 	if generatorPath == "" {
