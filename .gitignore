@@ -6,5 +6,6 @@
 
 # compile and test output
 **/*.exe
+run.sh
 
 test/output/**/*
