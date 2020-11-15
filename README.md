@@ -2,7 +2,7 @@
 
 A golang command line utility for generating files from templates. Can be used to scaffold application code.
 
-Uses [go-generator-lib](https://github.com/StephanHCB/go-generator-libe/).
+Uses [go-generator-lib](https://github.com/StephanHCB/go-generator-lib/).
 
 ## Command line parameters
 
