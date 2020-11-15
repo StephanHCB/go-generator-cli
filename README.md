@@ -8,8 +8,11 @@ Uses [go-generator-lib](https://github.com/StephanHCB/go-generator-lib/).
 
   * `--generator=<path>` to set the path of the generator base directory.
   * `--target=<path>` to set the path of the target directory.
-  * `--create[=<specfile>]` to write a specfile with defaults. If the filename is omitted, it defaults to `generated-main.yaml`.
+  * `--create[=<generator name>]` to write a specfile with defaults. If the generator name is omitted, 
+     it defaults to `main`, and the file written will be called `generated-main.yaml`. 
   * `--render[=<specfile>]` to use a specfile to render. If the filename is omitted, it defaults to `generated-main.yaml`.
+
+You will need to specify exactly one of `--create` and `--render`, while the other two arguments are mandatory.
 
 ## Generators
 
