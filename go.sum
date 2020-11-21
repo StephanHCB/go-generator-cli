@@ -4,8 +4,8 @@ github.com/StephanHCB/go-autumn-logging v0.1.1 h1:Q17HvKXRIzy9X2+AesGGu/W6TFjsE+
 github.com/StephanHCB/go-autumn-logging v0.1.1/go.mod h1:dPABYdECU3XrFib03uXbQFVLftUP5c4YaKSineiw37U=
 github.com/StephanHCB/go-autumn-logging-log v0.1.1 h1:6pElfzh/xjVveJMLJqDJ3EA/43V1CBI2PhYp4471Mkk=
 github.com/StephanHCB/go-autumn-logging-log v0.1.1/go.mod h1:m40+lA+YlIkOlKvgv06BgObT/Ta66PT1bYWagVD+goY=
-github.com/StephanHCB/go-generator-lib v0.1.2 h1:SVfaOBAsI7BmOWn78AhexLM39GTVq6tZx14QKDUq26A=
-github.com/StephanHCB/go-generator-lib v0.1.2/go.mod h1:3dZFKRiInutoiSZ7npUj3RF8QrRqYXx/yFf/5viiTys=
+github.com/StephanHCB/go-generator-lib v0.1.3 h1:3dWSy68uLxjUCe8KdneFkiiLe6WrLNNZBWuoYezfThc=
+github.com/StephanHCB/go-generator-lib v0.1.3/go.mod h1:3dZFKRiInutoiSZ7npUj3RF8QrRqYXx/yFf/5viiTys=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
