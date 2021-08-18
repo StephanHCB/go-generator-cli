@@ -87,3 +87,7 @@ parameters:
   serviceName: 'my-service'
   serviceUrl: github.com/StephanHCB/temp
 ```
+# Build and test
+
+This program uses go modules. If cloned outside your GOPATH, you can build and test it using
+`go build main.go` and `go test ./...`. This will also download all required dependencies.
