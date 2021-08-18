@@ -53,6 +53,12 @@ It also specifies which parameter variables will be available during rendering.
   * if a variable has a pattern set, the parameter value must regex-match that pattern. Please be advised that
     you must enclose the pattern with ^...$ if you want to force the whole value to match, otherwise
     it's enough for part of the value to match the pattern.
+  * variables are assumed to be string-valued by default, but the template generator actually allows any
+    valid yaml structure (lists and maps, even nested) both as default values and as variable values.
+    There is no type checking whatsoever, parsing templates that access missing fields or list items
+    will fail, so it is not recommended to overuse this feature. Also, you should definitely provide
+    a default value for any list or map typed variable, for else how will your users know what structure
+    you are assuming?
 
 The idea is that you keep your generators under version control.
 
@@ -64,6 +70,14 @@ If you set `with_items`, the template is used multiple times
 with the `item` variable set to the value you provided under `with_items`. These values can also be 
 a whole yaml data structure, you simply access it as `{{ .item.some.field }}`. 
 
+_At this time, it is not possible to dynamically assign the full list in with_items from a variable,
+so you can not dynamically determine the number of render runs._
+
+Note how you can add a `condition` that will be evaluated for the template. Inside it, you can use
+variables, or even `item`. If the condition evaluates to any one of `0`, `false`, `skip`, `no` the template will not be
+rendered. Note that the empty string counts as true, that means that if you do not specify a condition,
+the template is rendered.
+
 Also note how output directories are created for you on the fly if they don't exist.
   
 The [golang template language](https://golang.org/pkg/text/template/#example_Template) is pretty 
@@ -73,6 +87,21 @@ of how to include one of the parameters in your template output:
 ```
 fmt.Println("{{ .helloMessage }}")
 ```
+
+Assuming `someList` is a list variable, access the second entry as follows:
+
+```
+{{ index .someList 1 }}
+```
+
+Assuming `someMap` is a map variable with a field `message`, access it as follows:
+
+```
+{{ .someList.message }}
+```
+
+You can combine the two for structures with nested lists: `{{ (index .someList 0).someField }}`.
+
 ## Render Targets
 
 A render target is a directory that contains a yaml file which records the name of the generator used
