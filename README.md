@@ -30,9 +30,11 @@ templates:
     target: 'main.go'
   - source: 'src/web/controller.go.tmpl'
     target: 'web/controller/{{ .item }}.go'
+    condition: '{{ if eq .item "skipped" }}false{{ end }}'
     with_items:
      - health
      - reservations
+     - skipped
 variables:
   serviceUrl:
     description: 'The URL of the service repository, to be used in imports etc.'
@@ -42,7 +44,7 @@ variables:
     pattern: '^[a-z-]+$'
   helloMessage:
     description: 'A message to be inserted in the code.'
-    default: 'hello world'
+    default: 'hello {{ "world" }}'
 ```
 
 This defines templates like `src/sub/sub.go.tmpl` and `src/main.go.tmpl` and what target path
@@ -50,6 +52,7 @@ they'll be rendered to in the target directory.
 It also specifies which parameter variables will be available during rendering.
 
   * If a variable does not have a default value, it is a required parameter.
+  * default values are evaluated as templates, too, but you will not be able to refer to other variables
   * if a variable has a pattern set, the parameter value must regex-match that pattern. Please be advised that
     you must enclose the pattern with ^...$ if you want to force the whole value to match, otherwise
     it's enough for part of the value to match the pattern.
@@ -79,6 +82,8 @@ rendered. Note that the empty string counts as true, that means that if you do n
 the template is rendered.
 
 Also note how output directories are created for you on the fly if they don't exist.
+
+### Template Language
   
 The [golang template language](https://golang.org/pkg/text/template/#example_Template) is pretty 
 versatile, vaguely similar to the .j2 templates used by ansible. Here's a very simple example
@@ -102,6 +107,18 @@ Assuming `someMap` is a map variable with a field `message`, access it as follow
 
 You can combine the two for structures with nested lists: `{{ (index .someList 0).someField }}`.
 
+### Additional Template Functions
+
+We include [Masterminds/sprig](https://github.com/Masterminds/sprig) when parsing any template,
+which offers a collection of useful template functions, so you can do stuff like
+
+```
+{{ .helloMessage | upper }}
+```
+
+Read the sprig documentation, it adds much of what you would otherwise miss compared to ansible
+j2 templates.
+
 ## Render Targets
 
 A render target is a directory that contains a yaml file which records the name of the generator used
@@ -116,7 +133,18 @@ parameters:
   serviceName: 'my-service'
   serviceUrl: github.com/StephanHCB/temp
 ```
-# Build and test
+
+## Build and test
 
 This program uses go modules. If cloned outside your GOPATH, you can build and test it using
 `go build main.go` and `go test ./...`. This will also download all required dependencies.
+
+### Acceptance Tests (give you examples)
+
+[go-generator-lib](https://github.com/StephanHCB/go-generator-lib/tree/master/test/acceptance) 
+has almost complete coverage with BDD-style acceptance tests.
+
+In the course of the test runs, several generator specs and templates are read from the
+[test resources](https://github.com/StephanHCB/go-generator-lib/tree/master/test/resources),
+and a number of render specs are written to the
+[test output directory](https://github.com/StephanHCB/go-generator-lib/tree/master/test/output).
