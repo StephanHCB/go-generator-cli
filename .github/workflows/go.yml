@@ -39,7 +39,7 @@ jobs:
         uses: sosedoff/actions/golang-build@master
       - uses: actions/setup-node@v1
         with:
-          node-version: 12
+          node-version: 14
       - name: release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
