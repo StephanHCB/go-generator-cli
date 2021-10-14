@@ -27,3 +27,20 @@ jobs:
 
     - name: Test
       run: go test -v ./...
+
+  release:
+    name: release
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master' || 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
+    needs: build
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make binaries
+        uses: sosedoff/actions/golang-build@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - name: release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
