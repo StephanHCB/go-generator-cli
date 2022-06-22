@@ -28,6 +28,9 @@ templates:
     target: 'sub/sub.go'
   - source: 'src/main.go.tmpl'
     target: 'main.go'
+  - source: 'src/some.text.file.copied.verbatim'
+    target: 'text.txt'
+    just_copy: true
   - source: 'src/web/controller.go.tmpl'
     target: 'web/controller/{{ .item }}.go'
     condition: '{{ if eq .item "skipped" }}false{{ end }}'
@@ -80,6 +83,11 @@ Note how you can add a `condition` that will be evaluated for the template. Insi
 variables, or even `item`. If the condition evaluates to any one of `0`, `false`, `skip`, `no` the template will not be
 rendered. Note that the empty string counts as true, that means that if you do not specify a condition,
 the template is rendered.
+
+You can disable the template parse run for a file by setting `just_copy` to `true`. This will allow you to 
+copy a file verbatim, useful for files that contain lots of `{{ }}`. But then you cannot use any template
+commands in those files. You can still use variables in the source and target, and you can still use `condition`
+or `with_items`.
 
 Also note how output directories are created for you on the fly if they don't exist.
 
