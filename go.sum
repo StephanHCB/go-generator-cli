@@ -7,8 +7,8 @@ github.com/Masterminds/sprig v2.22.0+incompatible/go.mod h1:y6hNFY5UBTIWBxnzTeuN
 github.com/StephanHCB/go-autumn-logging v0.1.1/go.mod h1:dPABYdECU3XrFib03uXbQFVLftUP5c4YaKSineiw37U=
 github.com/StephanHCB/go-autumn-logging v0.3.0 h1:G0zs8xoth8i8mOeoFgG3Dvk6dIY9dPPJ7wkm6mjaPyY=
 github.com/StephanHCB/go-autumn-logging v0.3.0/go.mod h1:dPABYdECU3XrFib03uXbQFVLftUP5c4YaKSineiw37U=
-github.com/StephanHCB/go-autumn-logging-log v0.1.1 h1:6pElfzh/xjVveJMLJqDJ3EA/43V1CBI2PhYp4471Mkk=
-github.com/StephanHCB/go-autumn-logging-log v0.1.1/go.mod h1:m40+lA+YlIkOlKvgv06BgObT/Ta66PT1bYWagVD+goY=
+github.com/StephanHCB/go-autumn-logging-log v0.3.0 h1:iVGVXm0tADigTR4uKqpNAsZ3RGOlQ9KbKClbR5BPtV8=
+github.com/StephanHCB/go-autumn-logging-log v0.3.0/go.mod h1:4+4tqwuyh5KEXOVqE3JBEPoJyEs260BCveb4Dmdgdz8=
 github.com/StephanHCB/go-generator-lib v1.3.0 h1:dtJK2q5N5AQPwDK2dPCjTwNl3001wkVVJizmkbWZ65g=
 github.com/StephanHCB/go-generator-lib v1.3.0/go.mod h1:7CnWBbvxNMoSkAutifXAHLLmKWCCfQ890HOWdCXhS6Q=
 github.com/davecgh/go-spew v1.1.0 h1:ZDRjVQ15GmhC3fiQ8ni8+OwkZQO4DARzQgrnXU1Liz8=
