@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/StephanHCB/go-generator-cli/compare/v1.0.0...v1.1.0) (2022-06-22)
+
+
+### Features
+
+* **#8:** add support for just_copy ([84d13ba](https://github.com/StephanHCB/go-generator-cli/commit/84d13ba3ce21768a7927131805189626ba4c4038)), closes [#8](https://github.com/StephanHCB/go-generator-cli/issues/8)
+
 # [1.0.0](https://github.com/StephanHCB/go-generator-cli/compare/v0.3.0...v1.0.0) (2021-10-14)
 
 
