@@ -29,18 +29,18 @@ jobs:
       run: go test -v ./...
 
   release:
-    name: release
+    name: Release
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master' || 'refs/heads/beta' || github.ref == 'refs/heads/alpha'
     needs: build
     steps:
-      - uses: actions/checkout@v2
-      - name: Make binaries
-        uses: sosedoff/actions/golang-build@master
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
         with:
-          node-version: 14
-      - name: release
+          go-version: 1.16
+      - run: go build
+      - uses: go-semantic-release/action@v1
+        with:
+          hooks: goreleaser
+          prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx -p @semantic-release/changelog -p @semantic-release/git -p semantic-release semantic-release
