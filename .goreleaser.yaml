@@ -23,10 +23,10 @@ archives:
     format: binary
 dockers:
   - image_templates:
-      - "StephanHCB/go-generator-cli:{{ .Tag }}"
-      - "StephanHCB/go-generator-cli:v{{ .Major }}"
-      - "StephanHCB/go-generator-cli:v{{ .Major }}.{{ .Minor }}"
-      - "StephanHCB/go-generator-cli:latest"
+      - "stephanhcb/go-generator-cli:{{ .Tag }}"
+      - "stephanhcb/go-generator-cli:v{{ .Major }}"
+      - "stephanhcb/go-generator-cli:v{{ .Major }}.{{ .Minor }}"
+      - "stephanhcb/go-generator-cli:latest"
     build_flag_templates:
       - "--pull"
       - "--label=org.opencontainers.image.created={{.Date}}"
