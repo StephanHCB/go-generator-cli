@@ -4,8 +4,9 @@ github.com/Masterminds/semver v1.5.0 h1:H65muMkzWKEuNDnfl9d70GUjFniHKHRbFPGBuZ3Q
 github.com/Masterminds/semver v1.5.0/go.mod h1:MB6lktGJrhw8PrUyiEoblNEGEQ+RzHPF078ddwwvV3Y=
 github.com/Masterminds/sprig v2.22.0+incompatible h1:z4yfnGrZ7netVz+0EDJ0Wi+5VZCSYp4Z0m2dk6cEM60=
 github.com/Masterminds/sprig v2.22.0+incompatible/go.mod h1:y6hNFY5UBTIWBxnzTeuNhlNS5hqE0NB0E6fgfo2Br3o=
-github.com/StephanHCB/go-autumn-logging v0.3.0 h1:G0zs8xoth8i8mOeoFgG3Dvk6dIY9dPPJ7wkm6mjaPyY=
 github.com/StephanHCB/go-autumn-logging v0.3.0/go.mod h1:dPABYdECU3XrFib03uXbQFVLftUP5c4YaKSineiw37U=
+github.com/StephanHCB/go-autumn-logging v0.4.0 h1:/EC41JJBi1Ao8eFmx4jReokJsbKsRoMoGTaCJZ/Nins=
+github.com/StephanHCB/go-autumn-logging v0.4.0/go.mod h1:dPABYdECU3XrFib03uXbQFVLftUP5c4YaKSineiw37U=
 github.com/StephanHCB/go-autumn-logging-log v0.3.0 h1:iVGVXm0tADigTR4uKqpNAsZ3RGOlQ9KbKClbR5BPtV8=
 github.com/StephanHCB/go-autumn-logging-log v0.3.0/go.mod h1:4+4tqwuyh5KEXOVqE3JBEPoJyEs260BCveb4Dmdgdz8=
 github.com/StephanHCB/go-generator-lib v1.5.0 h1:vGscWduTUlnPizA317JmrqNbZGlZ0pVwmcQcyjBmZ88=
@@ -34,7 +35,6 @@ github.com/stretchr/testify v1.7.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/
 github.com/stretchr/testify v1.8.0/go.mod h1:yNjHg4UonilssWZ8iaSj1OCr/vHnekPRkoO+kdMU+MU=
 github.com/stretchr/testify v1.8.3 h1:RP3t2pwF7cMEbC1dqtB6poj3niw/9gnV4Cjg5oW5gtY=
 github.com/stretchr/testify v1.8.3/go.mod h1:sz/lmYIOXD/1dqDmKjjqLyZ2RngseejIcXlSw2iwfAo=
-golang.org/x/crypto v0.0.0-20210921155107-089bfa567519 h1:7I4JAnoQBe7ZtJcBaYHi5UtiO8tQHbUSXxL+pnGRANg=
 golang.org/x/crypto v0.0.0-20210921155107-089bfa567519/go.mod h1:GvvjBRRGRdwPK5ydBHafDWAxML/pGHZbMvKqRZ5+Abc=
 golang.org/x/crypto v0.24.0 h1:mnl8DM0o513X8fdIkmyFE/5hTYxbwYOjDS/+rK6qpRI=
 golang.org/x/crypto v0.24.0/go.mod h1:Z1PMYSOR5nyMcyAVAIQSKCDwalqy85Aqn1x3Ws4L5DM=
